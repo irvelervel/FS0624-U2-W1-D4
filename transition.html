@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Transitions</title>
+    <style>
+      .box {
+        width: 150px;
+        height: 150px;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+      }
+
+      .box-1 {
+        background-color: orangered;
+        color: white;
+        /* la transition si applica allo stato NORMALE dell'elemento */
+        /* la sintassi di transition è questa: */
+        /* transition: proprietà durata curva-di-accelerazione ritardo */
+        transition: width 3s linear 500ms;
+        /* transition: width 3s cubic-bezier(0.28, 1.22, 0.99, -0.12) 0s; */
+      }
+
+      .box-1:hover {
+        width: 500px;
+      }
+
+      .box-2 {
+        background-color: blue;
+        color: white;
+        /* la transition si applica allo stato NORMALE dell'elemento */
+        /* la sintassi di transition è questa: */
+        /* transition: proprietà durata curva-di-accelerazione ritardo */
+        transition: width 3s linear 500ms, height 1.5s ease 500ms,
+          background-color 1s ease 500ms;
+        /* transition: width 3s cubic-bezier(0.28, 1.22, 0.99, -0.12) 0s; */
+      }
+
+      .box-2:hover {
+        width: 500px;
+        height: 500px;
+        background-color: green;
+      }
+
+      .box-3 {
+        background-color: lightpink;
+        transition: transform 5s ease-in;
+        /* applicando una transition allo stato "normale" dell'elemento (quindi non in hover)
+        state definendo in un colpo solo sia la transizione in entrata sia quella in uscita */
+      }
+
+      .box-3:hover {
+        transform: rotate(830deg);
+        transition: transform 1s ease-in;
+        /* applicando due volte la proprietà transition è possibile definire separatamente
+        le due animazioni di entrata e uscita */
+        /* attenzione però che specificandone due, la transition applicata all'hover diventerà
+        quella di IN, mentre quella definita nello stato "normale" diventa automaticamente
+        quella di OUT */
+      }
+
+      .flex-container {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>CSS TRANSITIONS</h1>
+      <p>
+        Una transition è una "transizione" tra due valori di una proprietà CSS
+        (o tra più proprietà CSS). La possiamo interpretare come un
+        "rallentamento" nell'applicazione di una proprietà CSS. È possibile
+        "rallentare" anche l'applicazione di più proprietà CSS insieme.
+        L'effetto di "transizione" solitamente viene associato all'evento di
+        hover (al posizionamento del cursore sopra un elemento HTML).
+      </p>
+      <h2>BOX CHE SI ALLUNGA ON HOVER</h2>
+      <div class="flex-container">
+        <div class="box box-1">BOX 1</div>
+        <p>CIAONE</p>
+      </div>
+      <h2>BOX CHE SI INGRANDISCE ON HOVER</h2>
+      <div class="box box-2">BOX 2</div>
+      <h2>BOX CHE RUOTA ON HOVER</h2>
+      <div class="box box-3">BOX 3</div>
+    </main>
+  </body>
+</html>
