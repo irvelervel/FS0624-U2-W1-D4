@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS TRANSFORM</title>
+    <style>
+      .box {
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        margin-top: 50px;
+      }
+
+      .rotate {
+        background-color: greenyellow;
+        /* applichiamo la proprietà transform */
+        transform: rotate(-120deg);
+        box-shadow: 5px 5px 10px 3px rgb(255, 0, 0, 0.5);
+      }
+
+      .skew {
+        background-color: cadetblue;
+        transform: skew(45deg, -20deg);
+      }
+
+      .scale {
+        background-color: darkorange;
+        /* valori di scale superiori a 1 INGRANDISCONO, valori inferiori a 1
+        RIMPICCIOLISCONO */
+        transform: scale(1.2);
+        /* anche se con questa proprietà l'effetto visivo dell'elemento cambia,
+        il suo ingombro all'interno del documento rimarrà sempre di 150x150 */
+      }
+
+      .translate {
+        background-color: goldenrod;
+        transform: translate(30px, 30px);
+      }
+
+      .translateAndScale {
+        background-color: darkorchid;
+        transform: translate(30px, 30px) scale(2);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>PROPRIETÀ TRANSFORM</h1>
+      <p>
+        La proprietà CSS "transform" permette di apportare delle trasformazioni
+        grafiche agli elementi HTML. NON è possibile utilizzare questa proprietà
+        per risolvere problemi di IMPAGINAZIONE; questo perchè anche se
+        "trasformati" gli elementi andranno fisicamente ad occupare lo stesso
+        spazio, non curanti degli ingombri attorno a loro; rischiate anzi di
+        sovrastarne altri per colpa delle vostre rotazioni, traslazioni,
+        ingrandimenti etc.
+      </p>
+      <h3>Transform rotate</h3>
+      <div class="box rotate">
+        <!-- vorrei centrare questa parola ROTATE all'interno del box -->
+        <!-- il modo più facile è utilizzando display: flex -->
+        <div>ROTATE</div>
+      </div>
+      <h3>Transform skew</h3>
+      <div class="box skew">
+        <div>SKEW</div>
+      </div>
+      <h3>Transform scale</h3>
+      <div class="box scale">
+        <div>SCALE</div>
+      </div>
+      <h3>Transform translate</h3>
+      <div class="box translate">
+        <div>TRANSLATE</div>
+      </div>
+      <h3>Transform translate and scale</h3>
+      <div class="box translateAndScale">
+        <div>TRANSLATE + SCALE</div>
+      </div>
+    </main>
+  </body>
+</html>
