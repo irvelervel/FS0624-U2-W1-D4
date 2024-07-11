@@ -85,6 +85,18 @@
           background-color: mediumaquamarine;
         }
       }
+
+      .btn-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .btn-container button {
+        padding: 10px 20px;
+        border-radius: 10%;
+        border-color: orange;
+        background-color: orange;
+      }
     </style>
   </head>
   <body>
@@ -104,7 +116,9 @@
       <div class="box box-color-change"></div>
       <div class="box box-translation"></div>
       <div class="box box-3"></div>
-      <button onclick="go()">VIA!</button>
+      <div class="btn-container">
+        <button onclick="go()">VIA!</button>
+      </div>
     </main>
     <script src="./script.js"></script>
   </body>

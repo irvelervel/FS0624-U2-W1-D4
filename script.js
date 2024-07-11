@@ -8,4 +8,12 @@ const go = function () {
   box.classList.toggle('box-moving')
   // il metodo "toggle" aggiunge una determinata classe CSS qual ora NON ci sia già,
   // e la toglie nel caso ci sia già
+
+  // cambiamo anche l'etichetta del bottone
+  // selezioniamo il bottone
+  const myButton = document.querySelector('.btn-container button')
+  // cambio l'etichetta
+  myButton.innerText = myButton.innerText === 'VIA!' ? 'STOP!' : 'VIA!'
+  // inserisco come nuove valore "STOP!" se il vecchio valore era "VIA!", e "VIA!" se il
+  // vecchio valore era "STOP!"
 }
